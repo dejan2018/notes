@@ -1,0 +1,92 @@
+-JQuery 属性操作
+.attr("属性")   //读取HTML标签属性值
+.attr({"属性1":"值","属性2":"值"})   //设置多个标签属性值
+.attr("属性","值")   //设置单个标签属性值
+.removeAttr("属性")   //删除标签属性
+
+
+
+-JQuery CSS样式操作
+.css("css属性")  //读取CSS属性值
+.css({"CSS属性1":"值","CSS属性2":"值"})   //设置多个样式
+.css("CSS属性名","值")   //设置单个样式
+$("div").addClass("test test1")  //给div标签添加class属性(批量添加样式，多个样式名称之间用“空格”间隔开)
+$("div").removeClass()  //移除div标签的class属性
+
+
+
+-jQuery 文档操作
+$("p").html()  //获取p标签的文本内容
+$("p").html("<b>新内容</b>")  //设置p标签的文本内容
+$("p").text()  //读取P标签里面的内容,过滤html标签
+$("p").text("<b>新内容</b>")  //设置p标签的文本内容,不解析html标签
+$("div").remove()  //移除div元素
+$("div").empty()  //保留div标签,移除内容包括所有文本和子节点
+$("div").append("<htmlCode>");   //在div内容的后面添加内容
+$("div").prepend("<htmlCode>");   //在div内容的前面添加内容
+$("div").before("<htmlCode>");   //在div外面的前面添加内容
+$("div").after("<htmlCode>");   //在div外面的后面添加内容
+
+
+
+-JQuery 节点操作&遍历
+.parent()   //找父级节点
+.parents()   //所有父级节点
+.parentsUntil(".div0")  //向上遍历直找到祖先元素属性class='div0'为止
+.children()  //找到当前节点的下一级子节点。
+.find("*")   //找到指定的子节点，若子节点为通配"*",则找到所有的子节点。
+$("h3").siblings()  //找h3的同胞节点
+$("h2").next()  //找h2的向下一个同胞节点
+$("h2").nextAll()  //找h2的全部向下同胞节点
+$("h2").nextUntil("h5")  //找到h2到h5之间的所有节点
+$("h3").prev()  //找h3的上一个同胞节点
+$("h3").prevAll()  //找到h3的所有上一级同胞节点
+$("h3").prevUntil("h1")  //找到h3到h1之间的节点
+
+
+
+
+
+-JQuery 事件
+$("p").bind({"click":function(){$("p").css("css属性","值");},"mouseout":function(){$("p").css("css属性","值");}});  //给p定义鼠标点击、划出事件(bind同时响应多个事件，事件处理函数不同。)
+$("div").dblclick(function(){$("div").css("css属性","值");});  //给div增加鼠标双击事件(double click)
+$("h1").click(function(){$("h2").css("display","none");});  //给h1增加鼠标单击事件
+$("div").hover(function(){$("div").html("mouseover");},function(){$("div").html("mouseout");});  //当鼠标划过div时显示mouseover，当鼠标划出div时显示mouseout文字(hover对mouseover和mouseout两个事件的封装。)
+
+事件：鼠标 click 、dblclick 、mouseover 、mouseout 、mouseup 、mousedown
+      
+      键盘 keypress 、keydown 、keyup
+
+      文档 load 、unload
+ 
+      表单 submit 、change 、focus 、blur
+
+
+
+-jQuery 效果
+(1)隐藏和显示
+.hide("slow")  //隐藏，hide([speed])speed是隐藏的速度。参数:"slow"、"fast",整数 毫秒数  默认为 "0"
+.show(1000)  //显示，show([speed])speed是显示的速度。参数:"slow"、"fast",整数 毫秒数  默认为 "0"
+(2)淡入和淡出
+.fadeIn("slow")  //淡入，fadeIn([speed])speed是淡入的速度。参数:"slow"、"fast",整数 毫秒数  默认为 "0"
+.fadeOut(1000)  //淡出，fadeOut([speed])speed是淡出的速度。参数:"slow"、"fast",整数 毫秒数  默认为 "0"
+.fadeTo("slow",0.9)  //淡出到指定的透明度，fadeTo([speed],[capacity])speed 淡出的速度。"slow"、"fast",整数 毫秒数|capacity 透明度。取值范围0~1.值越小透明度越高。
+.fadeToggle(300)  //fadeToggle() 方法在 fadeIn() 和 fadeOut() 方法之间切换。
+(3)划入和划出效果
+.slideUp("slow")  //划入，slideUp([speed])speed 划入的速度。"slow"、"fast",整数 毫秒数
+.slideDown("fast")  //划出，slideDown([speed])speed 划出的速度。"slow"、"fast",整数 毫秒数
+(4)动画
+$("div").animate({"left":"150px"});  //div向右移动150像素
+$("div").animate({"width":"50px","height":"50px"});  //div宽和高缩放到50像素
+(5)停止特效
+.stop()
+
+
+
+-jQuery AJAX
+
+
+
+
+
+
